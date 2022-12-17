@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Fitner
+//@testable import Fitner
 
 final class FitnerTests: XCTestCase {
 
