@@ -43,16 +43,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		68DAB683294E003A0056D30E /* Fitner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		68DAB683294E003A0056D30E /* FitStrap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitStrap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68DAB686294E003A0056D30E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68DAB688294E003A0056D30E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		68DAB68A294E003A0056D30E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		68DAB68F294E003C0056D30E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68DAB692294E003C0056D30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68DAB694294E003C0056D30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		68DAB699294E003C0056D30E /* FitnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		68DAB699294E003C0056D30E /* FitStrapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitStrapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68DAB69D294E003C0056D30E /* FitnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnerTests.swift; sourceTree = "<group>"; };
-		68DAB6A3294E003C0056D30E /* FitnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitnerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		68DAB6A3294E003C0056D30E /* FitStrapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitStrapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68DAB6A7294E003C0056D30E /* FitnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnerUITests.swift; sourceTree = "<group>"; };
 		68DAB6A9294E003C0056D30E /* FitnerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,9 +111,9 @@
 		68DAB684294E003A0056D30E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				68DAB683294E003A0056D30E /* Fitner.app */,
-				68DAB699294E003C0056D30E /* FitnerTests.xctest */,
-				68DAB6A3294E003C0056D30E /* FitnerUITests.xctest */,
+				68DAB683294E003A0056D30E /* FitStrap.app */,
+				68DAB699294E003C0056D30E /* FitStrapTests.xctest */,
+				68DAB6A3294E003C0056D30E /* FitStrapUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,9 +151,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		68DAB682294E003A0056D30E /* Fitner */ = {
+		68DAB682294E003A0056D30E /* FitStrap */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 68DAB6AD294E003C0056D30E /* Build configuration list for PBXNativeTarget "Fitner" */;
+			buildConfigurationList = 68DAB6AD294E003C0056D30E /* Build configuration list for PBXNativeTarget "FitStrap" */;
 			buildPhases = (
 				68DAB67F294E003A0056D30E /* Sources */,
 				68DAB680294E003A0056D30E /* Frameworks */,
@@ -163,7 +163,7 @@
 			);
 			dependencies = (
 			);
-			name = Fitner;
+			name = FitStrap;
 			packageProductDependencies = (
 				68DAB6B9294E00A80056D30E /* RxCocoa */,
 				68DAB6BB294E00A80056D30E /* RxRelay */,
@@ -173,12 +173,12 @@
 				68DAB6C7294E04320056D30E /* RxMoya */,
 			);
 			productName = Fitner;
-			productReference = 68DAB683294E003A0056D30E /* Fitner.app */;
+			productReference = 68DAB683294E003A0056D30E /* FitStrap.app */;
 			productType = "com.apple.product-type.application";
 		};
-		68DAB698294E003C0056D30E /* FitnerTests */ = {
+		68DAB698294E003C0056D30E /* FitStrapTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 68DAB6B0294E003C0056D30E /* Build configuration list for PBXNativeTarget "FitnerTests" */;
+			buildConfigurationList = 68DAB6B0294E003C0056D30E /* Build configuration list for PBXNativeTarget "FitStrapTests" */;
 			buildPhases = (
 				68DAB695294E003C0056D30E /* Sources */,
 				68DAB696294E003C0056D30E /* Frameworks */,
@@ -189,18 +189,18 @@
 			dependencies = (
 				68DAB69B294E003C0056D30E /* PBXTargetDependency */,
 			);
-			name = FitnerTests;
+			name = FitStrapTests;
 			packageProductDependencies = (
 				681CB41C294E09930081AC79 /* RxBlocking */,
 				681CB41E294E09980081AC79 /* RxTest */,
 			);
 			productName = FitnerTests;
-			productReference = 68DAB699294E003C0056D30E /* FitnerTests.xctest */;
+			productReference = 68DAB699294E003C0056D30E /* FitStrapTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		68DAB6A2294E003C0056D30E /* FitnerUITests */ = {
+		68DAB6A2294E003C0056D30E /* FitStrapUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 68DAB6B3294E003C0056D30E /* Build configuration list for PBXNativeTarget "FitnerUITests" */;
+			buildConfigurationList = 68DAB6B3294E003C0056D30E /* Build configuration list for PBXNativeTarget "FitStrapUITests" */;
 			buildPhases = (
 				68DAB69F294E003C0056D30E /* Sources */,
 				68DAB6A0294E003C0056D30E /* Frameworks */,
@@ -211,9 +211,9 @@
 			dependencies = (
 				68DAB6A5294E003C0056D30E /* PBXTargetDependency */,
 			);
-			name = FitnerUITests;
+			name = FitStrapUITests;
 			productName = FitnerUITests;
-			productReference = 68DAB6A3294E003C0056D30E /* FitnerUITests.xctest */;
+			productReference = 68DAB6A3294E003C0056D30E /* FitStrapUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -239,7 +239,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 68DAB67E294E003A0056D30E /* Build configuration list for PBXProject "Fitner" */;
+			buildConfigurationList = 68DAB67E294E003A0056D30E /* Build configuration list for PBXProject "FitStrap" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -257,9 +257,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				68DAB682294E003A0056D30E /* Fitner */,
-				68DAB698294E003C0056D30E /* FitnerTests */,
-				68DAB6A2294E003C0056D30E /* FitnerUITests */,
+				68DAB682294E003A0056D30E /* FitStrap */,
+				68DAB698294E003C0056D30E /* FitStrapTests */,
+				68DAB6A2294E003C0056D30E /* FitStrapUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -323,12 +323,12 @@
 /* Begin PBXTargetDependency section */
 		68DAB69B294E003C0056D30E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 68DAB682294E003A0056D30E /* Fitner */;
+			target = 68DAB682294E003A0056D30E /* FitStrap */;
 			targetProxy = 68DAB69A294E003C0056D30E /* PBXContainerItemProxy */;
 		};
 		68DAB6A5294E003C0056D30E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 68DAB682294E003A0056D30E /* Fitner */;
+			target = 68DAB682294E003A0056D30E /* FitStrap */;
 			targetProxy = 68DAB6A4294E003C0056D30E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -531,7 +531,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fitner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fitner";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitStrap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FitStrap";
 			};
 			name = Debug;
 		};
@@ -550,7 +550,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fitner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fitner";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitStrap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FitStrap";
 			};
 			name = Release;
 		};
@@ -591,7 +591,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		68DAB67E294E003A0056D30E /* Build configuration list for PBXProject "Fitner" */ = {
+		68DAB67E294E003A0056D30E /* Build configuration list for PBXProject "FitStrap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68DAB6AB294E003C0056D30E /* Debug */,
@@ -600,7 +600,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		68DAB6AD294E003C0056D30E /* Build configuration list for PBXNativeTarget "Fitner" */ = {
+		68DAB6AD294E003C0056D30E /* Build configuration list for PBXNativeTarget "FitStrap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68DAB6AE294E003C0056D30E /* Debug */,
@@ -609,7 +609,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		68DAB6B0294E003C0056D30E /* Build configuration list for PBXNativeTarget "FitnerTests" */ = {
+		68DAB6B0294E003C0056D30E /* Build configuration list for PBXNativeTarget "FitStrapTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68DAB6B1294E003C0056D30E /* Debug */,
@@ -618,7 +618,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		68DAB6B3294E003C0056D30E /* Build configuration list for PBXNativeTarget "FitnerUITests" */ = {
+		68DAB6B3294E003C0056D30E /* Build configuration list for PBXNativeTarget "FitStrapUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68DAB6B4294E003C0056D30E /* Debug */,
