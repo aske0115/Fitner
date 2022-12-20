@@ -11,7 +11,7 @@
 		681CB41F294E09980081AC79 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 681CB41E294E09980081AC79 /* RxTest */; };
 		68DAB687294E003A0056D30E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DAB686294E003A0056D30E /* AppDelegate.swift */; };
 		68DAB689294E003A0056D30E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DAB688294E003A0056D30E /* SceneDelegate.swift */; };
-		68DAB68B294E003A0056D30E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DAB68A294E003A0056D30E /* ViewController.swift */; };
+		68DAB68B294E003A0056D30E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DAB68A294E003A0056D30E /* HomeViewController.swift */; };
 		68DAB690294E003C0056D30E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68DAB68F294E003C0056D30E /* Assets.xcassets */; };
 		68DAB693294E003C0056D30E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68DAB691294E003C0056D30E /* LaunchScreen.storyboard */; };
 		68DAB69E294E003C0056D30E /* FitnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DAB69D294E003C0056D30E /* FitnerTests.swift */; };
@@ -46,7 +46,7 @@
 		68DAB683294E003A0056D30E /* FitStrap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitStrap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68DAB686294E003A0056D30E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68DAB688294E003A0056D30E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		68DAB68A294E003A0056D30E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		68DAB68A294E003A0056D30E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		68DAB68F294E003C0056D30E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68DAB692294E003C0056D30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68DAB694294E003C0056D30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 			children = (
 				68DAB686294E003A0056D30E /* AppDelegate.swift */,
 				68DAB688294E003A0056D30E /* SceneDelegate.swift */,
-				68DAB68A294E003A0056D30E /* ViewController.swift */,
+				68DAB68A294E003A0056D30E /* HomeViewController.swift */,
 				68DAB68F294E003C0056D30E /* Assets.xcassets */,
 				68DAB691294E003C0056D30E /* LaunchScreen.storyboard */,
 				68DAB694294E003C0056D30E /* Info.plist */,
@@ -295,7 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68DAB68B294E003A0056D30E /* ViewController.swift in Sources */,
+				68DAB68B294E003A0056D30E /* HomeViewController.swift in Sources */,
 				68DAB687294E003A0056D30E /* AppDelegate.swift in Sources */,
 				68DAB689294E003A0056D30E /* SceneDelegate.swift in Sources */,
 			);
@@ -467,8 +467,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Fitner/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -483,6 +484,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.daeun.aske.Fitner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -494,8 +496,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Fitner/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -510,6 +513,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.daeun.aske.Fitner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
