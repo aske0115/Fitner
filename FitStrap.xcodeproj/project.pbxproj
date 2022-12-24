@@ -23,6 +23,7 @@
 		68DAB6C3294E00D60056D30E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 68DAB6C2294E00D60056D30E /* SnapKit */; };
 		68DAB6C6294E04320056D30E /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 68DAB6C5294E04320056D30E /* Moya */; };
 		68DAB6C8294E04320056D30E /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 68DAB6C7294E04320056D30E /* RxMoya */; };
+		FCAE78F2295735EB00212BAA /* ProgramCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE78F1295735EB00212BAA /* ProgramCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		68DAB6A3294E003C0056D30E /* FitStrapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitStrapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68DAB6A7294E003C0056D30E /* FitnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnerUITests.swift; sourceTree = "<group>"; };
 		68DAB6A9294E003C0056D30E /* FitnerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FCAE78F1295735EB00212BAA /* ProgramCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		68DAB685294E003A0056D30E /* Fitner */ = {
 			isa = PBXGroup;
 			children = (
+				FCAE78EF295735AD00212BAA /* HomeViews */,
 				68DAB686294E003A0056D30E /* AppDelegate.swift */,
 				68DAB688294E003A0056D30E /* SceneDelegate.swift */,
 				68DAB68A294E003A0056D30E /* HomeViewController.swift */,
@@ -146,6 +149,22 @@
 				68DAB6A9294E003C0056D30E /* FitnerUITestsLaunchTests.swift */,
 			);
 			path = FitnerUITests;
+			sourceTree = "<group>";
+		};
+		FCAE78EF295735AD00212BAA /* HomeViews */ = {
+			isa = PBXGroup;
+			children = (
+				FCAE78F0295735B600212BAA /* ProgramCell */,
+			);
+			path = HomeViews;
+			sourceTree = "<group>";
+		};
+		FCAE78F0295735B600212BAA /* ProgramCell */ = {
+			isa = PBXGroup;
+			children = (
+				FCAE78F1295735EB00212BAA /* ProgramCollectionViewCell.swift */,
+			);
+			path = ProgramCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68DAB68B294E003A0056D30E /* HomeViewController.swift in Sources */,
+				FCAE78F2295735EB00212BAA /* ProgramCollectionViewCell.swift in Sources */,
 				68DAB687294E003A0056D30E /* AppDelegate.swift in Sources */,
 				68DAB689294E003A0056D30E /* SceneDelegate.swift in Sources */,
 			);

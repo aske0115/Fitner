@@ -10,15 +10,36 @@ import SnapKit
 
 class HomeViewController: UIViewController {
     
+    private lazy var collectionView: UICollectionView = {
+        var layout = UICollectionViewFlowLayout()
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(ProgramCollectionViewCell.self, forCellWithReuseIdentifier: "ProgramCell")
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        return collectionView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .red
+        self.view.backgroundColor = .white
         initSubviews()
         // Do any additional setup after loading the view.
     }
     
     private func initSubviews() {
         setupNavigationBar()
+        makeCollectionView()
+    }
+    
+    private func makeCollectionView() {
+        self.view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalTo(self.view)
+        }
     }
     
     private func setupNavigationBar() {
@@ -33,3 +54,15 @@ class HomeViewController: UIViewController {
     }
 }
 
+extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "ProgramCell", for: indexPath) as! ProgramCollectionViewCell
+        cell.configure("asglaskndgls")
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        10
+    }
+    
+}
