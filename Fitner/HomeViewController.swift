@@ -58,7 +58,7 @@ class HomeViewController: UIViewController {
             make.leading.trailing.equalTo(self.view).inset(UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20))
             make.height.equalTo(50)
             make.top.equalTo(collectionView.snp.bottom).offset(10)
-            make.bottom.greaterThanOrEqualTo(self.view).priority(750)
+            make.bottom.greaterThanOrEqualTo(self.view)
         }
     }
     
