@@ -40,7 +40,12 @@ class ProgramCollectionViewCell: UICollectionViewCell {
     }
     
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-        let targetSize = CGSize(width: UIScreen.main.bounds.width, height: layoutAttributes.frame.height)
+        var targetSize = CGSize(width: layoutAttributes.frame.width, height: layoutAttributes.frame.height)
+        
+        if let screenSize = self.window?.windowScene?.screen.bounds.size {
+            targetSize = CGSize(width: screenSize.width, height: targetSize.height)
+        }
+        
         layoutAttributes.frame.size = contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
         return layoutAttributes
     }
