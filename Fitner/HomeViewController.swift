@@ -50,6 +50,7 @@ class HomeViewController: UIViewController {
         collectionView.snp.makeConstraints { make in
             make.top.left.right.equalTo(self.view)
         }
+        
     }
     
     private func makeButtons() {
@@ -58,8 +59,9 @@ class HomeViewController: UIViewController {
             make.leading.trailing.equalTo(self.view).inset(UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20))
             make.height.equalTo(50)
             make.top.equalTo(collectionView.snp.bottom).offset(10)
-            make.bottom.greaterThanOrEqualTo(self.view)
+            make.bottom.greaterThanOrEqualTo(self.view).priority(250)
         }
+        addRoutineButton.setContentHuggingPriority(.required, for: .vertical)
     }
     
     private func setupNavigationBar() {
@@ -77,6 +79,7 @@ class HomeViewController: UIViewController {
     @objc func pressAddRoutineButton() {
         routines.append("\(Int.random(in: 0..<40000))")
         collectionView.reloadData()
+        collectionView.scrollToItem(at: IndexPath(item: routines.count - 1, section: 0), at: .bottom, animated: false)
     }
 }
 
