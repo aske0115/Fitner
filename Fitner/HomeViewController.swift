@@ -41,27 +41,28 @@ class HomeViewController: UIViewController {
     
     private func initSubviews() {
         setupNavigationBar()
-        makeCollectionView()
-        makeButtons()
+        makeSubviews()
+        setupLayout()
     }
     
-    private func makeCollectionView() {
+    private func makeSubviews() {
         self.view.addSubview(collectionView)
+        self.view.addSubview(addRoutineButton)
+    }
+    
+    private func setupLayout() {
+
         collectionView.snp.makeConstraints { make in
             make.top.left.right.equalTo(self.view)
+            make.bottom.equalTo(self.addRoutineButton.snp.top).offset(-10)
         }
         
-    }
-    
-    private func makeButtons() {
-        self.view.addSubview(addRoutineButton)
         addRoutineButton.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(self.view).inset(UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20))
+            make.left.right.equalTo(self.view).inset(UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20))
             make.height.equalTo(50)
-            make.top.equalTo(collectionView.snp.bottom).offset(10)
             make.bottom.greaterThanOrEqualTo(self.view).priority(250)
         }
-        addRoutineButton.setContentHuggingPriority(.required, for: .vertical)
+        addRoutineButton.setContentHuggingPriority(.defaultLow, for: .vertical)
     }
     
     private func setupNavigationBar() {
