@@ -53,16 +53,14 @@ class HomeViewController: UIViewController {
     private func setupLayout() {
 
         collectionView.snp.makeConstraints { make in
-            make.top.left.right.equalTo(self.view)
-            make.bottom.equalTo(self.addRoutineButton.snp.top).offset(-10)
+            make.edges.equalTo(self.view).inset(UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0))
         }
         
         addRoutineButton.snp.makeConstraints { make in
             make.left.right.equalTo(self.view).inset(UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20))
             make.height.equalTo(50)
-            make.bottom.greaterThanOrEqualTo(self.view).priority(250)
+            make.bottom.equalTo(self.view).offset(-20)
         }
-        addRoutineButton.setContentHuggingPriority(.defaultLow, for: .vertical)
     }
     
     private func setupNavigationBar() {
