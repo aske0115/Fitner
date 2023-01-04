@@ -7,7 +7,7 @@
 
 import UIKit
 import SnapKit
-import Alamofire
+import Kingfisher
 
 class ProgramCollectionViewCell: UICollectionViewCell {
     
@@ -55,13 +55,7 @@ class ProgramCollectionViewCell: UICollectionViewCell {
     
     func configure(_ string: String) {
         title.text = string
-        AF.download("http://d205bpvrqc9yn1.cloudfront.net/0009.gif").response { response in
-            debugPrint(response)
-            if response.error == nil, let imagePath = response.fileURL?.path {
-                let image = UIImage(contentsOfFile: imagePath)
-                self.imageView.image = image
-            }
-        }
+        imageView.kf.setImage(with: URL(string: "http://d205bpvrqc9yn1.cloudfront.net/0009.gif"))
     }
     
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
