@@ -46,10 +46,10 @@ class ProgramCollectionViewCell: UICollectionViewCell {
             make.top.right.bottom.equalTo(self.contentView).inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
         }
         imageView.snp.makeConstraints { make in
-            make.top.left.equalTo(self.contentView).inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+            make.top.left.equalTo(self.contentView).inset(UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10))
             make.right.equalTo(self.title.snp.left).offset(-20)
             make.size.equalTo(CGSize(width: 80, height: 80))
-            make.bottom.equalTo(self.contentView).priority(750)
+            make.bottom.lessThanOrEqualTo(self.contentView).offset(-10);
         }
     }
     
