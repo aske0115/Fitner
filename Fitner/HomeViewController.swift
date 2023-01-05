@@ -64,6 +64,7 @@ class HomeViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
+
         self.navigationItem.title = "FitStrap"
         let  settingButton = UIBarButtonItem(image: UIImage(systemName: "gearshape.fill"), style: .plain, target: self, action: #selector(self.pressSettingButton))
         navigationController?.navigationBar.isTranslucent = false
