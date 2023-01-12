@@ -8,18 +8,48 @@
 import UIKit
 import SnapKit
 
+final class HeaderView: UICollectionReusableView {
+    static let id = "MainSectionHeader"
+    private let label: UILabel = {
+       let label = UILabel()
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 24)
+        return label
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = .systemGray
+        self.addSubview(label)
+        label.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0  ))
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func prepareTitle(_ string: String) {
+        self.label.text = string
+    }
+}
+
 class HomeViewController: UIViewController {
     
     private var routines: [String] = ["asda","asdgasdgs"]
+    private var sections: [String] = ["My Plan", "Activites"]
     
     private lazy var collectionView: UICollectionView = {
         var layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
+        layout.headerReferenceSize = CGSize(width: self.view.bounds.width, height: 40)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(ProgramCollectionViewCell.self, forCellWithReuseIdentifier: "ProgramCell")
+        collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.id)
         collectionView.delegate = self
         collectionView.dataSource = self
         return collectionView
@@ -92,5 +122,23 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         routines.count
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        sections.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard kind == UICollectionView.elementKindSectionHeader,  let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.id, for: indexPath) as? HeaderView else { return
+            UICollectionReusableView()
+            
+        }
+        header.prepareTitle(sections[indexPath.section])
+        return header
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+
+        return CGSize(width: self.collectionView.bounds.width, height: 40)
     }
 }
