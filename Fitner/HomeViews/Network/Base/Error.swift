@@ -4,10 +4,11 @@
 //
 //  Created by Aske on 2023/01/17.
 //
+import Foundation
 
 enum RequestError: Error {
     case decode
-    case invalidURL
+    case invalidURL(URL)
     case noResponse
     case unauthorized
     case unknown
@@ -16,7 +17,10 @@ enum RequestError: Error {
         switch self {
         case .decode:
             return "Decode Error"
+        case .invalidURL(let url):
+            return "\(url) is invalidURL"
         default:
             return "unknonw Error"
+        }
     }
 }
