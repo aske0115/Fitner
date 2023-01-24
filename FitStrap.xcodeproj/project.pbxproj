@@ -27,6 +27,7 @@
 		68DAB6C6294E04320056D30E /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 68DAB6C5294E04320056D30E /* Moya */; };
 		68DAB6C8294E04320056D30E /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 68DAB6C7294E04320056D30E /* RxMoya */; };
 		FC2AAA7D297FBE8300423DA9 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2AAA7C297FBE8300423DA9 /* Exercise.swift */; };
+		FC2AAA7F297FBF5600423DA9 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2AAA7E297FBF5600423DA9 /* HTTPClient.swift */; };
 		FC3B73702965AB3B00A1222A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FC3B736F2965AB3B00A1222A /* Kingfisher */; };
 		FC8DD5202959C0D800A20CC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC8DD51F2959C0D800A20CC7 /* GoogleService-Info.plist */; };
 		FC8DD5232959C17E00A20CC7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FC8DD5222959C17E00A20CC7 /* FirebaseAnalytics */; };
@@ -73,6 +74,7 @@
 		68DAB6A7294E003C0056D30E /* FitnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnerUITests.swift; sourceTree = "<group>"; };
 		68DAB6A9294E003C0056D30E /* FitnerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FC2AAA7C297FBE8300423DA9 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		FC2AAA7E297FBF5600423DA9 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		FC8DD51F2959C0D800A20CC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCAE78F1295735EB00212BAA /* ProgramCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +143,7 @@
 				684AB22F2976C2D0009994F8 /* EndPoint.swift */,
 				684AB2312976C357009994F8 /* Methods.swift */,
 				684AB2332976C398009994F8 /* Error.swift */,
+				FC2AAA7E297FBF5600423DA9 /* HTTPClient.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				FCAE78F2295735EB00212BAA /* ProgramCollectionViewCell.swift in Sources */,
 				684AB2302976C2D0009994F8 /* EndPoint.swift in Sources */,
 				68DAB687294E003A0056D30E /* AppDelegate.swift in Sources */,
+				FC2AAA7F297FBF5600423DA9 /* HTTPClient.swift in Sources */,
 				684AB2322976C357009994F8 /* Methods.swift in Sources */,
 				684AB2342976C398009994F8 /* Error.swift in Sources */,
 				68DAB689294E003A0056D30E /* SceneDelegate.swift in Sources */,

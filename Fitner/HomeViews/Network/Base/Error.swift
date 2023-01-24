@@ -11,6 +11,7 @@ enum RequestError: Error {
     case invalidURL(URL)
     case noResponse
     case unauthorized
+    case unexpectedStatusCode
     case unknown
     
     var message: String {

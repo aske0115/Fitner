@@ -31,6 +31,6 @@ extension Endpoint {
     }
     
     var host: String {
-        ""
+        "exercisedb.p.rapidapi.com"
     }
 }
