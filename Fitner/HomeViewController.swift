@@ -117,7 +117,7 @@ class HomeViewController: UIViewController {
             guard let self = self else { return }
             switch result {
             case .success(let response):
-                self.exercises += response
+                self.exercises += response.sorted { $0.target < $1.target }
                 self.collectionView.reloadData()
             case .failure(let error):
                 print("error = \(error.message)")
