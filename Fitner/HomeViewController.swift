@@ -37,8 +37,8 @@ final class HeaderView: UICollectionReusableView {
 
 class HomeViewController: UIViewController {
     
-    private var routines: [String] = ["asda","asdgasdgs"]
-    private var sections: [String] = ["My Plan", "Activites"]
+    private var exercises: [Exercise] = []
+    private var service: ExerciseService
     
     private lazy var collectionView: UICollectionView = {
         var layout = UICollectionViewFlowLayout()
@@ -69,10 +69,21 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    init(service: ExerciseService) {
+        self.service = service
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func initSubviews() {
         setupNavigationBar()
         makeSubviews()
         setupLayout()
+        loadData()
     }
     
     private func makeSubviews() {
@@ -100,6 +111,26 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         navigationItem.rightBarButtonItem = settingButton
     }
+    
+    private func loadData() {
+        fetchAllExercises { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                self.exercises += response
+                self.collectionView.reloadData()
+            case .failure(let error):
+                print("error = \(error.message)")
+            }
+        }
+    }
+    
+    private func fetchAllExercises(completion: @escaping (Result<[Exercise], RequestError>) -> Void) {
+        Task(priority: .background) {
+            let result = await service.getAllExercises()
+            completion(result)
+        }
+    }
 
     
     @objc func pressSettingButton() {
@@ -107,35 +138,31 @@ class HomeViewController: UIViewController {
     }
     
     @objc func pressAddRoutineButton() {
-        routines.append("\(Int.random(in: 0..<40000))")
         collectionView.reloadData()
-        collectionView.scrollToItem(at: IndexPath(item: routines.count - 1, section: 0), at: .bottom, animated: false)
+        collectionView.scrollToItem(at: IndexPath(item: exercises.count - 1, section: 0), at: .bottom, animated: false)
     }
 }
 
 extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "ProgramCell", for: indexPath) as! ProgramCollectionViewCell
-        cell.configure(routines[indexPath.item])
+        cell.configure(exercises[indexPath.item])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        routines.count
+        exercises.count
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        sections.count
-    }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard kind == UICollectionView.elementKindSectionHeader,  let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.id, for: indexPath) as? HeaderView else { return
-            UICollectionReusableView()
-            
-        }
-        header.prepareTitle(sections[indexPath.section])
-        return header
-    }
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        guard kind == UICollectionView.elementKindSectionHeader,  let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.id, for: indexPath) as? HeaderView else { return
+//            UICollectionReusableView()
+//
+//        }
+//        header.prepareTitle(sections[indexPath.section])
+//        return header
+//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
 

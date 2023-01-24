@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Excersize: Codable {
+struct Exercise: Codable {
     let bodyPart: String
     let equipment: String
     let gifUrl: String

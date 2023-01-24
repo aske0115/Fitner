@@ -28,6 +28,8 @@
 		68DAB6C8294E04320056D30E /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 68DAB6C7294E04320056D30E /* RxMoya */; };
 		FC2AAA7D297FBE8300423DA9 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2AAA7C297FBE8300423DA9 /* Exercise.swift */; };
 		FC2AAA7F297FBF5600423DA9 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2AAA7E297FBF5600423DA9 /* HTTPClient.swift */; };
+		FC2AAA81297FC45400423DA9 /* ExerciseEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2AAA80297FC45400423DA9 /* ExerciseEndpoint.swift */; };
+		FC2AAA83297FC52800423DA9 /* ExerciseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2AAA82297FC52800423DA9 /* ExerciseService.swift */; };
 		FC3B73702965AB3B00A1222A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FC3B736F2965AB3B00A1222A /* Kingfisher */; };
 		FC8DD5202959C0D800A20CC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC8DD51F2959C0D800A20CC7 /* GoogleService-Info.plist */; };
 		FC8DD5232959C17E00A20CC7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FC8DD5222959C17E00A20CC7 /* FirebaseAnalytics */; };
@@ -75,6 +77,8 @@
 		68DAB6A9294E003C0056D30E /* FitnerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FC2AAA7C297FBE8300423DA9 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		FC2AAA7E297FBF5600423DA9 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		FC2AAA80297FC45400423DA9 /* ExerciseEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExerciseEndpoint.swift; path = Fitner/HomeViews/Network/Base/ExerciseEndpoint.swift; sourceTree = SOURCE_ROOT; };
+		FC2AAA82297FC52800423DA9 /* ExerciseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExerciseService.swift; path = Fitner/HomeViews/Network/Base/ExerciseService.swift; sourceTree = SOURCE_ROOT; };
 		FC8DD51F2959C0D800A20CC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCAE78F1295735EB00212BAA /* ProgramCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +155,7 @@
 		684AB22D2976C2BC009994F8 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
+				FC2AAA80297FC45400423DA9 /* ExerciseEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 		684AB22E2976C2C3009994F8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FC2AAA82297FC52800423DA9 /* ExerciseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -399,7 +405,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC2AAA81297FC45400423DA9 /* ExerciseEndpoint.swift in Sources */,
 				68DAB68B294E003A0056D30E /* HomeViewController.swift in Sources */,
+				FC2AAA83297FC52800423DA9 /* ExerciseService.swift in Sources */,
 				FC2AAA7D297FBE8300423DA9 /* Exercise.swift in Sources */,
 				FCAE78F2295735EB00212BAA /* ProgramCollectionViewCell.swift in Sources */,
 				684AB2302976C2D0009994F8 /* EndPoint.swift in Sources */,

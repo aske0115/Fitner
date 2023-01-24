@@ -10,8 +10,7 @@
    method: 'GET',
    url: 'https://exercisedb.p.rapidapi.com/exercises',
    headers: {
-     'X-RapidAPI-Key': 'f572e711c6msh49cda1befe0395ep1a3bb5jsndca9cd6d9b78',
-     'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
+     
    }
  }
  */
@@ -31,6 +30,6 @@ extension Endpoint {
     }
     
     var host: String {
-        "exercisedb.p.rapidapi.com"
+        ""
     }
 }

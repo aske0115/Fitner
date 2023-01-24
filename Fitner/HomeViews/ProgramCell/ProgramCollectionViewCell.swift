@@ -53,9 +53,9 @@ class ProgramCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configure(_ string: String) {
-        title.text = string
-        imageView.kf.setImage(with: URL(string: "http://d205bpvrqc9yn1.cloudfront.net/0009.gif"))
+    func configure(_ data: Exercise) {
+        title.text = "\(data.name)\n\n\(data.target)"
+        imageView.kf.setImage(with: URL(string: data.gifUrl))
     }
     
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
