@@ -26,6 +26,7 @@
 		68DAB6C3294E00D60056D30E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 68DAB6C2294E00D60056D30E /* SnapKit */; };
 		68DAB6C6294E04320056D30E /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 68DAB6C5294E04320056D30E /* Moya */; };
 		68DAB6C8294E04320056D30E /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 68DAB6C7294E04320056D30E /* RxMoya */; };
+		FC2AAA7D297FBE8300423DA9 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2AAA7C297FBE8300423DA9 /* Exercise.swift */; };
 		FC3B73702965AB3B00A1222A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FC3B736F2965AB3B00A1222A /* Kingfisher */; };
 		FC8DD5202959C0D800A20CC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC8DD51F2959C0D800A20CC7 /* GoogleService-Info.plist */; };
 		FC8DD5232959C17E00A20CC7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FC8DD5222959C17E00A20CC7 /* FirebaseAnalytics */; };
@@ -71,6 +72,7 @@
 		68DAB6A3294E003C0056D30E /* FitStrapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitStrapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68DAB6A7294E003C0056D30E /* FitnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnerUITests.swift; sourceTree = "<group>"; };
 		68DAB6A9294E003C0056D30E /* FitnerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FC2AAA7C297FBE8300423DA9 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		FC8DD51F2959C0D800A20CC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCAE78F1295735EB00212BAA /* ProgramCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,9 +212,18 @@
 			path = FitnerUITests;
 			sourceTree = "<group>";
 		};
+		FC2AAA7B297FBE4D00423DA9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC2AAA7C297FBE8300423DA9 /* Exercise.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FCAE78EF295735AD00212BAA /* HomeViews */ = {
 			isa = PBXGroup;
 			children = (
+				FC2AAA7B297FBE4D00423DA9 /* Model */,
 				684AB22B2976C298009994F8 /* Network */,
 				FCAE78F0295735B600212BAA /* ProgramCell */,
 			);
@@ -386,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68DAB68B294E003A0056D30E /* HomeViewController.swift in Sources */,
+				FC2AAA7D297FBE8300423DA9 /* Exercise.swift in Sources */,
 				FCAE78F2295735EB00212BAA /* ProgramCollectionViewCell.swift in Sources */,
 				684AB2302976C2D0009994F8 /* EndPoint.swift in Sources */,
 				68DAB687294E003A0056D30E /* AppDelegate.swift in Sources */,
