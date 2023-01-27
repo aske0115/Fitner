@@ -9,7 +9,7 @@ import UIKit
 
 struct ExerciseLayoutSection: LayoutSection {
     func configureCell(collectionView: UICollectionView, indexPath: IndexPath, item: AnyHashable, position: Int) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ProgramCollectionViewCell.self), for: indexPath) as! ProgramCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProgramCell", for: indexPath) as! ProgramCollectionViewCell
         if let item = item as? Exercise {
             cell.configure(item)
         }

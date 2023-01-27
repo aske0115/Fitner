@@ -50,19 +50,42 @@ class HomeViewController: UIViewController {
         [ExerciseLayoutSection()]
     
     private lazy var collectionView: UICollectionView = {
-        var layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
-        layout.headerReferenceSize = CGSize(width: self.view.bounds.width, height: 40)
+        var layout = UICollectionViewCompositionalLayout { (sectionIndex, environment) -> NSCollectionLayoutSection? in
+            return self.sections[sectionIndex].layoutSection
+        }
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(ProgramCollectionViewCell.self, forCellWithReuseIdentifier: "ProgramCell")
         collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.id)
-        collectionView.delegate = self
-        collectionView.dataSource = self
+//        collectionView.delegate = self
+//        collectionView.dataSource = self
+        
+        dataSource = UICollectionViewDiffableDataSource
+            <Section, AnyHashable>(collectionView: collectionView) {
+                (collectionView: UICollectionView,
+                indexPath: IndexPath,
+                app: AnyHashable) -> UICollectionViewCell? in
+                
+                return self.sections[indexPath.section].configureCell (
+                    collectionView: collectionView,
+                    indexPath: indexPath,
+                    item: app,
+                    position: indexPath.row)
+        }
+    
         return collectionView
     }()
+    
+    func configureHeader() {
+        dataSource.supplementaryViewProvider = {
+          (
+          collectionView: UICollectionView,
+          kind: String,
+          indexPath: IndexPath)
+            -> UICollectionReusableView? in
+            return self.sections[indexPath.section].header(collectionView: collectionView, indexPath: indexPath)
+        }
+    }
     
     private lazy var addRoutineButton: UIButton = {
         let button = UIButton(type: .custom)
@@ -75,6 +98,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         initSubviews()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -92,6 +116,7 @@ class HomeViewController: UIViewController {
         setupNavigationBar()
         makeSubviews()
         setupLayout()
+        configureHeader()
         loadData()
     }
     
@@ -127,7 +152,11 @@ class HomeViewController: UIViewController {
             switch result {
             case .success(let response):
                 self.exercises += response.sorted { $0.target < $1.target }
-                self.collectionView.reloadData()
+                var snapshot = NSDiffableDataSourceSnapshot<Section, AnyHashable>()
+                snapshot.appendSections([.exercise])
+                snapshot.appendItems(self.exercises, toSection: .exercise)
+                self.dataSource.apply(snapshot, animatingDifferences: false)
+//                self.collectionView.reloadData()
             case .failure(let error):
                 print("error = \(error.message)")
             }
@@ -152,29 +181,29 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "ProgramCell", for: indexPath) as! ProgramCollectionViewCell
-        cell.configure(exercises[indexPath.item])
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        exercises.count
-    }
-    
-    
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        guard kind == UICollectionView.elementKindSectionHeader,  let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.id, for: indexPath) as? HeaderView else { return
-//            UICollectionReusableView()
-//
-//        }
-//        header.prepareTitle(sections[indexPath.section])
-//        return header
+//extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource {
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "ProgramCell", for: indexPath) as! ProgramCollectionViewCell
+//        cell.configure(exercises[indexPath.item])
+//        return cell
 //    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-
-        return CGSize(width: self.collectionView.bounds.width, height: 40)
-    }
-}
+//
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        exercises.count
+//    }
+//
+//
+////    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+////        guard kind == UICollectionView.elementKindSectionHeader,  let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.id, for: indexPath) as? HeaderView else { return
+////            UICollectionReusableView()
+////
+////        }
+////        header.prepareTitle(sections[indexPath.section])
+////        return header
+////    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//
+//        return CGSize(width: self.collectionView.bounds.width, height: 40)
+//    }
+//}

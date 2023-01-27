@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Exercise: Codable {
+struct Exercise: Codable, Hashable {
+    let identifire: UUID = UUID()
     let bodyPart: String
     let equipment: String
     let gifUrl: String
