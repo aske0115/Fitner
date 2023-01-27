@@ -39,6 +39,15 @@ class HomeViewController: UIViewController {
     
     private var exercises: [Exercise] = []
     private var service: ExerciseService
+    enum Section: CaseIterable {
+        case exercise
+    }
+    
+    var dataSource: UICollectionViewDiffableDataSource<Section, AnyHashable>!
+    
+    // Derives the order of the sections
+    lazy var sections: [LayoutSection] =
+        [ExerciseLayoutSection()]
     
     private lazy var collectionView: UICollectionView = {
         var layout = UICollectionViewFlowLayout()

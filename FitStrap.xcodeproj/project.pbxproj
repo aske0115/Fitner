@@ -31,6 +31,8 @@
 		FC2AAA81297FC45400423DA9 /* ExerciseEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2AAA80297FC45400423DA9 /* ExerciseEndpoint.swift */; };
 		FC2AAA83297FC52800423DA9 /* ExerciseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2AAA82297FC52800423DA9 /* ExerciseService.swift */; };
 		FC3B73702965AB3B00A1222A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FC3B736F2965AB3B00A1222A /* Kingfisher */; };
+		FC743988298353A80026FB8C /* LayoutSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC743987298353A80026FB8C /* LayoutSection.swift */; };
+		FC74398B2983541D0026FB8C /* ExerciseLayoutSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC74398A2983541D0026FB8C /* ExerciseLayoutSection.swift */; };
 		FC8DD5202959C0D800A20CC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC8DD51F2959C0D800A20CC7 /* GoogleService-Info.plist */; };
 		FC8DD5232959C17E00A20CC7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FC8DD5222959C17E00A20CC7 /* FirebaseAnalytics */; };
 		FC8DD5252959C17E00A20CC7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FC8DD5242959C17E00A20CC7 /* FirebaseAuth */; };
@@ -79,6 +81,8 @@
 		FC2AAA7E297FBF5600423DA9 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		FC2AAA80297FC45400423DA9 /* ExerciseEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExerciseEndpoint.swift; path = Fitner/HomeViews/Network/Base/ExerciseEndpoint.swift; sourceTree = SOURCE_ROOT; };
 		FC2AAA82297FC52800423DA9 /* ExerciseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExerciseService.swift; path = Fitner/HomeViews/Network/Base/ExerciseService.swift; sourceTree = SOURCE_ROOT; };
+		FC743987298353A80026FB8C /* LayoutSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSection.swift; sourceTree = "<group>"; };
+		FC74398A2983541D0026FB8C /* ExerciseLayoutSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseLayoutSection.swift; sourceTree = "<group>"; };
 		FC8DD51F2959C0D800A20CC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCAE78F1295735EB00212BAA /* ProgramCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,9 +233,35 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FC743985298353800026FB8C /* ComposableLayout */ = {
+			isa = PBXGroup;
+			children = (
+				FC743989298354080026FB8C /* LayoutSections */,
+				FC7439862983539A0026FB8C /* LayoutSectionProtocol */,
+			);
+			path = ComposableLayout;
+			sourceTree = "<group>";
+		};
+		FC7439862983539A0026FB8C /* LayoutSectionProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				FC743987298353A80026FB8C /* LayoutSection.swift */,
+			);
+			path = LayoutSectionProtocol;
+			sourceTree = "<group>";
+		};
+		FC743989298354080026FB8C /* LayoutSections */ = {
+			isa = PBXGroup;
+			children = (
+				FC74398A2983541D0026FB8C /* ExerciseLayoutSection.swift */,
+			);
+			path = LayoutSections;
+			sourceTree = "<group>";
+		};
 		FCAE78EF295735AD00212BAA /* HomeViews */ = {
 			isa = PBXGroup;
 			children = (
+				FC743985298353800026FB8C /* ComposableLayout */,
 				FC2AAA7B297FBE4D00423DA9 /* Model */,
 				684AB22B2976C298009994F8 /* Network */,
 				FCAE78F0295735B600212BAA /* ProgramCell */,
@@ -408,8 +438,10 @@
 				FC2AAA81297FC45400423DA9 /* ExerciseEndpoint.swift in Sources */,
 				68DAB68B294E003A0056D30E /* HomeViewController.swift in Sources */,
 				FC2AAA83297FC52800423DA9 /* ExerciseService.swift in Sources */,
+				FC74398B2983541D0026FB8C /* ExerciseLayoutSection.swift in Sources */,
 				FC2AAA7D297FBE8300423DA9 /* Exercise.swift in Sources */,
 				FCAE78F2295735EB00212BAA /* ProgramCollectionViewCell.swift in Sources */,
+				FC743988298353A80026FB8C /* LayoutSection.swift in Sources */,
 				684AB2302976C2D0009994F8 /* EndPoint.swift in Sources */,
 				68DAB687294E003A0056D30E /* AppDelegate.swift in Sources */,
 				FC2AAA7F297FBF5600423DA9 /* HTTPClient.swift in Sources */,
